@@ -1,20 +1,20 @@
 import { cn } from "@/utils";
 
 type ButtonProps = {
-    variant?: "primary" | "secondary";
-    textContent?: string;
+    variant?: "primary" | "secondary" | "icon";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({ variant, children, className, ...props }: ButtonProps) => {
     return (
         <button
             className={cn(
-                "px-4 py-2.5 rounded-sm bg-white text-black flex items-center justify-center",
+                "px-4 py-2.5 rounded-sm     flex items-center justify-center transition-colors duration-150",
                 className,
                 variant === "primary" &&
-                    "bg-blueAccent text-white text-sm font-semibold rounded-sm h-[46px] w-[124px]",
+                    "bg-blueAccent hover:bg-blueAccent/80 text-white text-sm font-semibold rounded-sm h-[46px] w-[124px]",
                 variant === "secondary" &&
-                    "bg-black font-medium text-xs rounded-0 h-[36px] w-[213px]"
+                    "bg-black hover:bg-black/80 font-medium text-xs rounded-0 h-[36px] w-[213px]",
+                variant === "icon" && "bg-transparent font-medium rounded-0 w-4 h-4"
             )}
             {...props}
         >

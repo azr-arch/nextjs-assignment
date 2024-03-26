@@ -1,5 +1,6 @@
 import { Button } from "@/components/button";
-import { TeamList } from "@/components/team-list";
+import { Collection } from "@/components/collection";
+import { TeamList, TeamOrAddCard } from "@/components/team-list";
 
 const sportsTeamData = [
     {
@@ -7,24 +8,28 @@ const sportsTeamData = [
         name: "sacramento river cats",
         noOfEvents: 48,
         sport: "baseball",
+        cardType: "teamCard",
     },
     {
         banner: "/images/team-2.png", // if this data is being fetched, then this can be changed to image url,
         name: "las vegas aviators",
         noOfEvents: 28,
         sport: "baseball",
+        cardType: "teamCard",
     },
     {
         banner: "/images/team-3.png", // if this data is being fetched, then this can be changed to image url,
         name: "new jersey devils",
         noOfEvents: 15,
         sport: "baseball",
+        cardType: "teamCard",
     },
     {
         banner: "/images/team-2.png", // if this data is being fetched, then this can be changed to image url,
         name: "las vegas aviators",
         noOfEvents: 28,
         sport: "baseball",
+        cardType: "teamCard",
     },
     {
         banner: "/images/ad.png",
@@ -33,6 +38,7 @@ const sportsTeamData = [
                       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+        cardType: "advertisementCard",
     },
 ];
 
@@ -48,11 +54,13 @@ export default function MainPage() {
                     <div className="w-full h-[2px] bg-[#738FFF] mt-1.5" />
                 </div>
 
-                <TeamList data={sportsTeamData} />
+                <TeamList data={sportsTeamData as TeamOrAddCard[]} />
             </div>
             <Button variant="primary" className="shadow-sm shadow-black mx-auto mt-[50px]">
                 See More
             </Button>
+
+            <Collection />
         </div>
     );
 }

@@ -1,5 +1,6 @@
-import { TeamCard, AdCard } from "@/types";
+import { TeamCard, AdCard, CardType } from "@/types";
 import { TeamInfoCard } from "./team-info-card";
+import { AdvertisementCard } from "./advertisement-card";
 
 // This is type definition
 export type TeamOrAddCard = TeamCard | AdCard;
@@ -17,7 +18,13 @@ export const TeamList = ({ data }: TeamListProps) => {
             {data.map((card, idx) => (
                 <li key={idx}>
                     {/* This is a component */}
-                    <TeamInfoCard data={card} />
+                    {card.cardType === CardType.TEAM ? (
+                        // Render a team info card
+                        <TeamInfoCard data={card as TeamCard} />
+                    ) : (
+                        // Else render a advertisement card
+                        <AdvertisementCard data={card as AdCard} />
+                    )}
                 </li>
             ))}
         </ul>

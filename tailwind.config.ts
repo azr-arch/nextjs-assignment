@@ -21,6 +21,9 @@ const config: Config = {
             textColor: {
                 secondary: "#DFDFDF",
             },
+            colors: {
+                blueAccent: "#2C9CF0",
+            },
         },
     },
     plugins: [],
