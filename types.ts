@@ -9,10 +9,13 @@ export interface TeamCard {
 }
 
 export interface TicketCard {
-    banner?: string;
-    name?: string;
-    dateTime?: string;
+    id?: number;
+    imageUrl?: string;
+    team?: string;
     venue?: string;
+    time?: string;
+    date?: string;
+    weekday?: string;
 }
 
 export interface AdCard {

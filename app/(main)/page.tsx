@@ -1,6 +1,7 @@
 import { Button } from "@/components/button";
 import { Collection } from "@/components/collection";
 import { TeamList, TeamOrAddCard } from "@/components/team-list";
+import { ThemeSwitch } from "@/components/theme-switch";
 
 const sportsTeamData = [
     {
@@ -47,11 +48,17 @@ export default function MainPage() {
         <div className="w-full h-full max-w-screen-xl mx-auto">
             <div className="space-y-6">
                 {/* This can be extracted into a component */}
-                <div className="relative w-fit">
-                    <h3 className="block font-bold text-white text-2xl">Sports</h3>
+                <div className="relative w-full flex items-center">
+                    <div>
+                        <h3 className="block font-bold text-black dark:text-white text-2xl">
+                            Sports
+                        </h3>
 
-                    {/* Underline effect */}
-                    <div className="w-full h-[2px] bg-[#738FFF] mt-1.5" />
+                        {/* Underline effect */}
+                        <div className="w-full h-[2px] bg-[#738FFF] mt-1.5" />
+                    </div>
+
+                    <ThemeSwitch />
                 </div>
 
                 <TeamList data={sportsTeamData as TeamOrAddCard[]} />
