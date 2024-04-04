@@ -33,8 +33,6 @@
         --ring: 222.2 84% 4.9%;
 
         --radius: 0.5rem;
-
-        --dash-linear-grad: linear-gradient(to right, #a9acb2 50%, white 50%);
     }
 
     .dark {
@@ -65,8 +63,6 @@
         --border: 217.2 32.6% 17.5%;
         --input: 217.2 32.6% 17.5%;
         --ring: 212.7 26.8% 83.9%;
-
-        --dark-dash-linear-grad: linear-gradient(to right, #818a97 50%, #3a3d45 50%);
     }
 }
 
@@ -88,8 +84,10 @@
         z-index: 5;
         width: 20px;
         height: 20px;
-        background: linear-gradient(to bottom, #f9f8ff, #f3f9ff);
         border-radius: 50%;
+        background: linear-gradient(to bottom, #f9f8ff, #f3f9ff);
+
+        @apply dark:bg-gradient-to-b dark:from-[#18282a] dark:to-[#221a2c];
     }
 
     .ticket-effect::before {
@@ -103,22 +101,12 @@
     }
 
     .dashed {
-        background-image: var(--dash-linear-grad);
         background-repeat: repeat;
         background-size: 20px;
-    }
-}
 
-@layer utilities {
-    @media (prefers-color-scheme: dark) {
-        .dashed {
-            background-image: var(--dark-dash-linear-grad);
-        }
+        background-image: linear-gradient(to right, #a9acb2 50%, white 50%);
 
-        .ticket-effect::after,
-        .ticket-effect::before {
-            background: linear-gradient(to bottom, #18282a, #221a2c);
-        }
+        @apply dark:bg-gradient-to-r dark:from-[#818a97_50%] dark:to-[#3a3d45_50%];
     }
 }
 
@@ -127,14 +115,3 @@ html,
 body {
     height: 100%;
 }
-
-/* @media (prefers-color-scheme: dark) {
-    .dashed {
-        background-image: ;
-    }
-
-    .ticket-effect::before,
-    .ticket-effect::after {
-        background: linear-gradient(to bottom, #18282a, #221a2c);
-    }
-} */

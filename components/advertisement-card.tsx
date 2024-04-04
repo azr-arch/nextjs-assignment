@@ -8,7 +8,7 @@ interface AdvertisementCardProps {
 export const AdvertisementCard = ({ data }: AdvertisementCardProps) => {
     return (
         <div className="bg-card dark:bg-darkCard p-2.5 min-w-[237px] h-full flex flex-col gap-y-7 w-1/2 md:w-full min-h-[511px] mx-auto md:mx-0">
-            <div className="flex-1 relative">
+            <div className="flex-1 relative rounded-sm overflow-hidden">
                 <Image
                     src={data?.banner || ""}
                     alt={`Ad Poster`}
