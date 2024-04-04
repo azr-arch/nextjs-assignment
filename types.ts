@@ -1,5 +1,3 @@
-import { type } from "os";
-
 export interface TeamCard {
     banner?: string; // For dynamic use we can shift to use URL here!
     name?: string; // Team name

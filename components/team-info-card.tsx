@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { TeamOrAddCard } from "./team-list";
-import { TeamList } from "./team-list";
-import { TeamCard, AdCard } from "@/types";
+import { TeamCard } from "@/types";
 
 interface TeamInfoCardProps {
     data?: TeamCard;

@@ -32,20 +32,6 @@ export const CustomSlider = ({ data }: SliderProps) => {
                 <CarouselPrevious />
                 <CarouselNext />
             </Carousel>
-
-            {/* <div
-                style={{ minHeight: "624px", scrollbarWidth: "none" }}
-                className="overflow-x-scroll self-stretch w-full relative flex-grow gap-x-4 flex items-center pr-8 "
-            >
-                {data.map((item) => (
-                    // Carousel item
-                    <SliderItem data={item} key={item.id} />
-                ))}
-            </div> */}
-
-            {/* <button className=" border-2 border-blueAccent w-9 h-9">
-                <ChevronRight className="w-full h-full text-blueAccent " />
-            </button> */}
         </div>
     );
 };
