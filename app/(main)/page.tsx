@@ -3,6 +3,7 @@ import { Collection } from "@/components/collection";
 import { TeamList, TeamOrAddCard } from "@/components/team-list";
 import { ThemeSwitch } from "@/components/theme-switch";
 
+// Dummy Data
 const sportsTeamData = [
     {
         banner: "/images/team-1.png", // if this data is being fetched, then this can be changed to image url,
@@ -61,12 +62,14 @@ export default function MainPage() {
                     <ThemeSwitch />
                 </div>
 
+                {/* Team Overview Cards */}
                 <TeamList data={sportsTeamData as TeamOrAddCard[]} />
             </div>
             <Button variant="primary" className="shadow-sm shadow-black mx-auto mt-[50px]">
                 See More
             </Button>
 
+            {/* Ticket Collection */}
             <Collection />
         </div>
     );

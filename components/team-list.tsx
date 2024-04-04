@@ -17,7 +17,6 @@ export const TeamList = ({ data }: TeamListProps) => {
         <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[14px] w-full">
             {data.map((card, idx) => (
                 <li key={idx}>
-                    {/* This is a component */}
                     {card.cardType === CardType.TEAM ? (
                         // Render a team info card
                         <TeamInfoCard data={card as TeamCard} />
