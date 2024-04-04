@@ -19,7 +19,7 @@ export const SliderItem = ({ data }: SliderItemProps) => {
             </div>
 
             {/* Dashed Effect */}
-            <div className=" flex items-center px-4 h-[20px] relative  w-full mb-auto dark:shadow-white">
+            <div className=" flex items-center px-4 h-[20px] relative   w-full mb-auto dark:shadow-white ticket-effect">
                 <div className="w-full h-[1px] dashed" />
             </div>
 

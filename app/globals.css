@@ -79,40 +79,56 @@
     }
 }
 
+@layer components {
+    .ticket-effect::before,
+    .ticket-effect::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        z-index: 5;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(to bottom, #f9f8ff, #f3f9ff);
+        border-radius: 50%;
+    }
+
+    .ticket-effect::before {
+        left: -26px;
+        box-shadow: inset -2px 0px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .ticket-effect::after {
+        right: -26px;
+        box-shadow: inset 2px 0px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashed {
+        background-image: var(--dash-linear-grad);
+        background-repeat: repeat;
+        background-size: 20px;
+    }
+}
+
+@layer utilities {
+    @media (prefers-color-scheme: dark) {
+        .dashed {
+            background-image: var(--dark-dash-linear-grad);
+        }
+
+        .ticket-effect::after,
+        .ticket-effect::before {
+            background: linear-gradient(to bottom, #18282a, #221a2c);
+        }
+    }
+}
+
 :root,
 html,
 body {
     height: 100%;
 }
 
-.ticket-effect::before,
-.ticket-effect::after {
-    position: absolute;
-    top: 0;
-    z-index: 5;
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(to bottom, #f9f8ff, #f3f9ff);
-    border-radius: 50%;
-}
-
-.ticket-effect::before {
-    left: -26px;
-    box-shadow: inset -2px 0px 2px rgba(0, 0, 0, 0.1);
-}
-
-.ticket-effect::after {
-    right: -26px;
-    box-shadow: inset 2px 0px 2px rgba(0, 0, 0, 0.1);
-}
-
-.dashed {
-    background-image: var(--dash-linear-grad);
-    background-repeat: repeat;
-    background-size: 20px;
-}
-
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     .dashed {
         background-image: ;
     }
@@ -121,4 +137,4 @@ body {
     .ticket-effect::after {
         background: linear-gradient(to bottom, #18282a, #221a2c);
     }
-}
+} */
