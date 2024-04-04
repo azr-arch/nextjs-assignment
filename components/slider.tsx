@@ -20,30 +20,6 @@ export const CustomSlider = ({ data }: SliderProps) => {
 
     return (
         <div className="w-full h-full  flex  items-center justify-center gap-x-5 ">
-            {/* <button className=" border-2 border-blueAccent w-9 h-9">
-                <ChevronLeft className="w-full h-full text-blueAccent " />
-            </button> */}
-
-            {/* Carousel */}
-            {/* <Carousel className="">
-                <CarouselContent className="min-h-[624px] self-stretch ">
-                    <CarouselItem key={data[0].id}>
-                        <SliderItem data={data[0]} />
-                    </CarouselItem>
-
-                    <CarouselItem key={data[1].id}>
-                        <SliderItem data={data[1]} />
-                    </CarouselItem>
-
-                    <CarouselItem key={data[2].id}>
-                        <SliderItem data={data[2]} />
-                    </CarouselItem>
-
-                    <CarouselPrevious />
-                    <CarouselNext />
-                </CarouselContent>
-            </Carousel> */}
-
             <Carousel className="justify-center w-1/2  md:w-full ">
                 <CarouselContent className="min-h-[624px] self-stretch ">
                     {data.map((item, idx) => (
