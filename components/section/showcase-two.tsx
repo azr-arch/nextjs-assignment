@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { ShowcaseSection } from "./showcase-secion";
 import { Button } from "../ui/button";
 import { ArrowRight, Phone } from "lucide-react";
+
+import { motion } from "motion/react";
+import { fadeIn, listItemVariant, listVariant } from "../motion/list-variants";
 
 const showcaseItems = [
     {
@@ -31,12 +36,18 @@ export const ShowcaseTwo = () => {
     return (
         <ShowcaseSection>
             <div>
-                <div className="grid gap-5">
+                <motion.div
+                    variants={fadeIn}
+                    initial="hidden"
+                    whileInView="show"
+                    id="showcase-title-container"
+                    className="grid gap-5"
+                >
                     <p className="text-blue-600 text-2xl font-semibold tracking-tighter">
                         Lorem ipsum dolor sit
                     </p>
 
-                    <h3 className="capitalize text-balance heading-1 text-[42px]">
+                    <h3 className="uppercase text-balance heading-1 text-[42px]">
                         lorem ipsum Dolor sit amet
                     </h3>
 
@@ -45,11 +56,22 @@ export const ShowcaseTwo = () => {
                         dui. Mi porttitor ut aliquam mattis maecenas eget integer in nam. Non nisl
                         iaculis at felis aliquet. Hendrerit tellus at purus lectus.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="grid grid-rows-3 gap-8 mt-[50px]">
+                <motion.div
+                    variants={listVariant}
+                    initial={"hidden"}
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    className="grid grid-rows-3 gap-8 mt-[50px]"
+                >
                     {showcaseItems.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-x-4 justify-center">
+                        <motion.div
+                            key={idx}
+                            variants={listItemVariant}
+                            id="showcase-item"
+                            className="flex items-start gap-x-4 justify-center"
+                        >
                             <Image
                                 src={item.imagrUrl}
                                 width={36}
@@ -64,11 +86,14 @@ export const ShowcaseTwo = () => {
                                 </p>
                                 <p className="text-black">{item.labelDesc}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
-            <div className="relative w-full h-full -order-1 md:order-1 max-w-[577px] max-h-[620px]">
+            <div
+                id="showcase-img-container"
+                className="relative w-full h-full -order-1 md:order-1 max-w-[577px] max-h-[620px]"
+            >
                 <Image
                     src={"/assets/bg/showcase-2-1.png"}
                     alt="Office men"
@@ -78,6 +103,7 @@ export const ShowcaseTwo = () => {
             </div>
 
             <div
+                id="showcase-border"
                 className="absolute inset-0 gradient-lines"
                 style={{
                     // transform: "rotate(75deg)",

@@ -1,7 +1,5 @@
+import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
-import { Logo } from "@/components/logo";
-import { NavBar } from "@/components/nav";
-import { Banner } from "@/components/section/banner";
 import { BannerOne } from "@/components/section/banner-1";
 import { BannerTwo } from "@/components/section/banner-2";
 import { BrandMarquee } from "@/components/section/brand-marquee";
@@ -14,7 +12,6 @@ import { MobileAppBanner } from "@/components/section/mobile-app-banner";
 import { ShowcaseOne } from "@/components/section/showcase-one";
 import { ShowcaseTwo } from "@/components/section/showcase-two";
 import { SectionWrapper } from "@/components/shared/section-wrapper";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
     return (
@@ -42,6 +39,8 @@ export default function Home() {
             <MobileAppBanner />
             <GallerySection />
             <CarouselSection />
+
+            <Footer />
         </main>
     );
 }

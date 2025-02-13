@@ -17,7 +17,7 @@ export const CarouselSection = () => {
                     </p>
                 </div>
 
-                <Button className="bg-white hover:bg-white/80 text-black  md:w-[238px]">
+                <Button className="bg-white font-semibold hover:bg-white/80 text-black  md:w-[238px]">
                     Lorem Ipsum
                 </Button>
             </div>
