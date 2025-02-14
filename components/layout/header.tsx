@@ -2,10 +2,55 @@
 
 import { ChevronDown, ChevronRight, Menu } from "lucide-react";
 import { Logo } from "../logo";
-import { navItems } from "../nav";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { motion } from "motion/react";
+import Link from "next/link";
+
+export const navItems = [
+    {
+        label: "Lorem Ipsum",
+        children: [
+            {
+                label: "Link 1",
+                href: "#",
+            },
+            {
+                label: "Link 2",
+                href: "#",
+            },
+            // ... more links
+        ],
+    },
+    {
+        label: "Dolor Ipsum",
+        children: [
+            {
+                label: "Link XYZ",
+                href: "#",
+            },
+            {
+                label: "Link XYZ",
+                href: "#",
+            },
+            // ... more links
+        ],
+    },
+    {
+        label: "Dolor Ipsum",
+        children: [
+            {
+                label: "Link XYZ",
+                href: "#",
+            },
+            {
+                label: "Link XYZ",
+                href: "#",
+            },
+            // ... more links
+        ],
+    },
+];
 
 const list = {
     hidden: { opacity: 0 },
@@ -59,17 +104,45 @@ function DesktopNav() {
             className="w-full grow px-4 hidden md:flex items-center justify-between gap-5"
         >
             {navItems.map((item, idx) => (
-                <motion.li
-                    variants={listItem}
-                    key={idx}
-                    id="nav-item"
-                    className="flex items-center gap-x-1 group text-blue-600 hover:text-blue-400 transition-colors cursor-pointer"
-                >
-                    <p className=" font-medium">{item.label}</p>
-                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+                <motion.li key={idx} variants={listItem}>
+                    <DesktopNavItem {...item} />
                 </motion.li>
             ))}
         </motion.ul>
+    );
+}
+
+function DesktopNavItem({
+    label,
+    children,
+}: {
+    label: string;
+    children: {
+        label: string;
+        href: string;
+    }[];
+}) {
+    return (
+        <div
+            // id="nav-item"
+            className="group relative flex items-center gap-x-1 group text-blue-600 hover:text-blue-400 transition-colors cursor-pointer"
+        >
+            <p className=" font-medium">{label}</p>
+            <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+
+            {/* DropDown Content */}
+            <div className="bg-neutral-100/50 border border-neutral-200 rounded-md absolute top-8 left-1/2 -translate-x-1/2  p-2  w-[180px] transition-all duration-200 invisible opacity-0 group-hover:visible group-hover:opacity-100 ">
+                {children.map((item, idx) => (
+                    <Link
+                        href={"#"}
+                        key={idx}
+                        className="px-3 block py-2 rounded-md hover:bg-neutral-300 text-sm cursor-pointer text-blue-500 hover:text-blue-800"
+                    >
+                        {item.label}
+                    </Link>
+                ))}
+            </div>
+        </div>
     );
 }
 

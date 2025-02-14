@@ -1,4 +1,4 @@
-import { Banner } from "./banner";
+import { Banner } from "../shared/banner";
 
 export const BannerOne = () => {
     return (

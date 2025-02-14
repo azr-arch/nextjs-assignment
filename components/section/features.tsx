@@ -1,5 +1,9 @@
+"use client";
+
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
+import { featureItemVariant, featureListVariant } from "@/motion-variants";
 
 const featuresData = [
     {
@@ -72,11 +76,16 @@ export const Features = () => {
             </div>
 
             {/* Feature cards data */}
-            <div className=" flex flex-wrap items-center justify-center gap-14">
+            <motion.div
+                variants={featureListVariant}
+                initial="hidden"
+                animate="show"
+                className=" flex flex-wrap items-center justify-center gap-14"
+            >
                 {featuresData.map((feature, idx) => (
                     <FeatureCard key={idx} {...feature} />
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };
@@ -93,7 +102,12 @@ function FeatureCard({
     desc: string;
 }) {
     return (
-        <div className="overflow-hidden rounded-xl max-w-[445px] h-[460px] border border-neutral-200 flex flex-col items-start pb-5">
+        <motion.div
+            variants={featureItemVariant}
+            initial="hidden"
+            whileInView={"show"}
+            className="overflow-hidden rounded-xl max-w-[445px] h-[460px] border border-neutral-200 flex flex-col items-start pb-5"
+        >
             <div className="relative w-full h-[40%]">
                 <Image fill src={imageUrl} alt="feature image" className="object-cover" />
             </div>
@@ -111,6 +125,6 @@ function FeatureCard({
             >
                 Learn More
             </Link>
-        </div>
+        </motion.div>
     );
 }

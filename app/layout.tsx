@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Condensed, Inter } from "next/font/google";
 import "./globals.css";
+import InfoCardPopup from "@/components/info-card";
 
 const robotoCondensed = Roboto_Condensed({
     weight: "700",
@@ -28,6 +29,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${robotoCondensed.variable} ${inter.variable} antialiased relative`}>
                 {children}
+                <InfoCardPopup />
             </body>
         </html>
     );

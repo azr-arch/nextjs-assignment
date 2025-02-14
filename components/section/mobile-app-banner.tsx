@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { Banner } from "./banner";
+import { Banner } from "../shared/banner";
 
 export const MobileAppBanner = () => {
     return (

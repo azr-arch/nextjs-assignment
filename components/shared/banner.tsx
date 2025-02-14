@@ -1,5 +1,8 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { Logo } from "../logo";
+import { motion } from "motion/react";
+import { fadeIn } from "@/motion-variants";
 
 export const Banner = ({
     imgUrl = "/assets/bg/banner.png",
@@ -13,7 +16,10 @@ export const Banner = ({
     showLogo?: boolean;
 }) => {
     return (
-        <section
+        <motion.section
+            variants={fadeIn}
+            initial={"hidden"}
+            whileInView="show"
             style={{
                 backgroundImage: `url(${imgUrl})`,
             }}
@@ -26,6 +32,6 @@ export const Banner = ({
                 {showLogo && <Logo className="w-[100px] md:w-[156px]" />}
                 {children}
             </div>
-        </section>
+        </motion.section>
     );
 };

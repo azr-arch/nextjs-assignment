@@ -1,12 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { ShowcaseSection } from "./showcase-secion";
-import { Button } from "../ui/button";
-import { ArrowRight, Phone } from "lucide-react";
+import { ShowcaseSection } from "../shared/showcase-secion";
 
 import { motion } from "motion/react";
-import { fadeIn, listItemVariant, listVariant } from "../motion/list-variants";
+import { fadeIn, listItemVariant, listVariant } from "@/motion-variants";
 
 const showcaseItems = [
     {
@@ -102,11 +100,11 @@ export const ShowcaseTwo = () => {
                 />
             </div>
 
+            {/* Abstract line pattern */}
             <div
                 id="showcase-border"
                 className="absolute inset-0 gradient-lines"
                 style={{
-                    // transform: "rotate(75deg)",
                     position: "absolute",
                     width: "15%" /* Extend beyond container */,
                     height: " 10%",

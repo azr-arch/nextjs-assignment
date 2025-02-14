@@ -30,3 +30,27 @@ export const fadeIn = {
         opacity: 1,
     },
 };
+
+export const featureListVariant = {
+    hidden: {
+        x: "-100",
+    },
+    show: {
+        x: 0,
+        transition: {},
+    },
+};
+
+export const featureItemVariant = {
+    hidden: {
+        opacity: 0,
+        scale: 0.5,
+    },
+    show: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+            delay: 0.3,
+        },
+    },
+};

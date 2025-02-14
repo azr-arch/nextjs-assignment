@@ -21,10 +21,6 @@ export const ShowcaseSection = ({
                     delay: 0.1,
                 },
             }}
-            viewport={{
-                once: true,
-                amount: 0.5,
-            }}
             className="relative w-full py-5 mt-[80px]"
         >
             <div
