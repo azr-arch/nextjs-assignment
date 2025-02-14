@@ -25,7 +25,7 @@ export default function InfoCardPopup() {
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <Card className="w-full max-w-md mx-4">
-                <CardHeader className="relative">
+                <CardHeader className="text-2xl relative">
                     <CardTitle className="font-heading">Welcome to the project demo!</CardTitle>
                     <Button
                         variant="ghost"
