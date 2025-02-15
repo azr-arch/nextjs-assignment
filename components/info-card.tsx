@@ -37,20 +37,6 @@ export default function InfoCardPopup() {
                         <X className="h-4 w-4" />
                     </Button>
                 </CardHeader>
-                <CardContent className="font-subheading">
-                    <p>
-                        Due to time constraints and other assignments, some sections were omitted.
-                        However, each implemented feature showcases unique and versatile efforts.
-                    </p>
-                    <ul className="list-disc list-inside mt-2 text-sm space-y-1">
-                        <li>Used both libraries and pure TailwindCSS for animations.</li>
-                        <li>
-                            Followed assignment instructions and used shadcn components as
-                            specified.
-                        </li>
-                        <li>Showcased versatile approaches in implementation.</li>
-                    </ul>
-                </CardContent>
                 <CardFooter>
                     <Button onClick={closePopup} className="w-full">
                         Got it!
