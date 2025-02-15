@@ -1,12 +1,13 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { ShowcaseThree } from "./showcase-three";
 
 export const GallerySection = () => {
     return (
-        <section className="  py-[160px] bg-[url('/assets/bg/linear.png')] bg-no-repeat bg-center bg-cover">
+        <section className="py-[160px] bg-[url('/assets/bg/linear.png')] bg-no-repeat bg-center bg-cover">
             {/* Gallery section */}
-            <div className="max-w-screen-2xl mx-auto px-16  pt-[60px] bg-[#F1F5F9]  grid lg:grid-cols-[624px_1fr] grid-cols-[1fr] grid-rows-[315px_1fr] gap-6">
+            <div className="max-w-screen-2xl mx-auto px-5 sm:px-16  pt-[60px] bg-[#F1F5F9]  grid lg:grid-cols-[624px_1fr] grid-cols-[1fr] grid-rows-[315px_1fr] gap-6">
                 <div className="space-y-8 max-w-[460px] w-[50%] md:w-full">
                     <div className="space-y-4">
                         <p className="text-[#475569] text-xl font-semibold tracking-wide uppercase">
@@ -58,7 +59,7 @@ export const GallerySection = () => {
                 </div>
 
                 <div className="grid grid-rows-[100px_239px] grid-cols-[95px_1fr] gap-x-6">
-                    <div className=" col-start-2 col-end-2 col-span-2  w-[135px] h-[241px] ml-auto -mt-[160px] relative">
+                    <div className=" col-start-2 col-end-2 col-span-2  w-[135px] h-[241px] ml-auto -mt-[320px] sm:-mt-[160px] relative">
                         <Image src={"/assets/bg/gallery-4.png"} fill alt="Gallery images" />
                     </div>
                     <div className="relative h-[162px] mt-auto">
@@ -69,6 +70,7 @@ export const GallerySection = () => {
                     </div>
                 </div>
             </div>
+            <ShowcaseThree />
         </section>
     );
 };

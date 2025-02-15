@@ -93,6 +93,10 @@ body {
     .subheading-2 {
         @apply font-subheading  text-sm md:text-xl -tracking-[2%] font-semibold text-foreground;
     }
+
+    .slider-btn {
+        @apply relative w-3 h-3 rounded-full bg-blue-400 mx-1;
+    }
 }
 
 :root,

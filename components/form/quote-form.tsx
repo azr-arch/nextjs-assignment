@@ -153,7 +153,7 @@ export const QuoteForm = () => {
                             control={form.control}
                             name="description"
                             render={({ field }) => (
-                                <FormItem className="col-span-2">
+                                <FormItem className="md:col-span-2">
                                     <FormLabel>Please Describe Your Project</FormLabel>
                                     <FormControl>
                                         <Textarea placeholder="Choose a project type" {...field} />

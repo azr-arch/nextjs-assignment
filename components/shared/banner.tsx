@@ -24,7 +24,7 @@ export const Banner = ({
                 backgroundImage: `url(${imgUrl})`,
             }}
             className={cn(
-                "mt-[150px] pt-[44px] pb-[100px] md:pb-[200px] px-[70px] bg-no-repeat bg-center bg-cover w-full  max-w-screen-2xl mx-auto",
+                "mt-[150px] pt-[44px] pb-[100px] md:pb-[200px] px-5 sm:px-[70px] bg-no-repeat bg-center bg-cover w-full  max-w-screen-2xl mx-auto",
                 className
             )}
         >

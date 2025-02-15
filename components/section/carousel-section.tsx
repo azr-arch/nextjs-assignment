@@ -13,7 +13,7 @@ import {
 
 export const CarouselSection = () => {
     return (
-        <section className="max-w-screen-2xl mx-auto bg-[#155ADA] p-[80px]">
+        <section className="max-w-screen-2xl mx-auto bg-[#155ADA] p-[60px] sm:p-[80px]">
             <div className="flex items-start md:items-center  flex-col md:flex-row gap-y-14 md:gap-x-[160px] w-full">
                 <motion.div
                     initial={{
